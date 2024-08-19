@@ -22,9 +22,9 @@ model Player {
 model ChessClub {
   id          Int      @id @default(autoincrement())
   name        String   @unique
+  meetsWhen   String
   host        Player   @relation(fields: [hostId], references: [id])
   hostId      Int
-  meetsWhen   DateTime
   venue       Venue    @relation(fields: [venueId], references: [id])
   venueId     Int
 }
